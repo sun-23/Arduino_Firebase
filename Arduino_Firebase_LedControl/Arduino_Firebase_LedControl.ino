@@ -15,7 +15,7 @@ DHT dht(DHTPIN, DHTTYPE);
 // Config Firebase
 #define FIREBASE_HOST "ledesp8266-ad24a.firebaseio.com"
 #define FIREBASE_AUTH "VAjJu2YYL2tE3Q21ogdTDA1DoUPTZSA0j5Tsfs9v"
-#define WIFI_SSID "iPadSam"
+#define WIFI_SSID "iPadSun"
 #define WIFI_PASSWORD "23march2548"
 
 void setup() {
@@ -72,8 +72,13 @@ void loop() {
   float h = dht.readHumidity();
   float t = dht.readTemperature();
 
+  int number = Firebase.getInt("Number");
+
+  Serial.print("number :");
+  Serial.println(number);
+
   if (isnan(h) || isnan(t)) {
-    Serial.println("Failed to read from DHT sensor!");
+   // Serial.println("Failed to read from DHT sensor!");
     delay(500);
     return;
   }

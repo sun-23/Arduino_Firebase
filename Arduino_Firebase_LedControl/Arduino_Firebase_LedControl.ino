@@ -84,7 +84,7 @@ void loop() {
   }
 
   // append a new value to /temperature
-  Firebase.pushFloat("temperature", 25);
+  Firebase.pushFloat("temperature", 25.0);
   if (Firebase.failed()) {
       Serial.print("pushing /temperature failed:");
       Serial.println(Firebase.error());  
@@ -92,7 +92,7 @@ void loop() {
   }
 
   // append a new value to /temperature
-   Firebase.pushFloat("humidity", 20);
+   Firebase.pushFloat("humidity", 20.0);
   if (Firebase.failed()) {
       Serial.print("pushing /humidity failed:");
       Serial.println(Firebase.error());  
